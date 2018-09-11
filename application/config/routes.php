@@ -53,9 +53,16 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// api for user
+// api for users
 $route["users"]["get"]    = "users/get";
 $route["users/(:num)"]["get"] = "users/find_get/$1";
 $route["users"]["post"]   = "users/insert";
 $route["users"]["put"] = "users/update";
 $route["users/(:num)"]["delete"] = "users/delete/$1";
+
+// api for usersxml
+$route["usersxml"]["get"]    = "usersxml/get";
+$route["usersxml/(:num)"]["get"] = "usersxml/find_get/$1";
+$route["usersxml"]["post"]   = "usersxml/insert";
+$route["usersxml"]["put"] = "usersxml/update";
+$route["usersxml/(:num)"]["delete"] = "usersxml/delete/$1";
