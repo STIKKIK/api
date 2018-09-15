@@ -16,11 +16,13 @@ class Users extends CI_Controller {
     }	
     public function find_get($id)
     {
-        $data = $this->user_model->get_user($id);
+        //$data = $this->user_model->get_user($id);
+        // extend database model
+        $data = $this->user_model->get_by('user_id', $id);
 		if(empty($data))
         {
             // set status header
-            $this->output->set_status_header(204);
+            $this->output->set_status_header(400);
         }
         else
         {
